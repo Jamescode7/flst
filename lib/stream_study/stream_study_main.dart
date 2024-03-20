@@ -1,4 +1,4 @@
-import 'package:flst/stream_study/clock_screen.dart';
+import 'package:flst/stream_study/stopwatch_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,6 +8,7 @@ void main() {
       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       useMaterial3: true,
     ),
-    home: const ClockScreen(),
+    //home: const ClockScreen(),
+    home: StopWatchScreen(),
   ));
 }
