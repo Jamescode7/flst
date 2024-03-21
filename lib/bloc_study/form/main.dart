@@ -1,13 +1,20 @@
+import 'package:flst/bloc_study/form/bloc/email_bloc.dart';
 import 'package:flst/bloc_study/form/pages/step_one.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(MaterialApp(
-    theme: ThemeData(
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      useMaterial3: true,
+  runApp(MultiBlocProvider(
+    providers: [
+      BlocProvider(create: (context) => EmailBloc()),
+    ],
+    child: MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const MainHome(),
     ),
-    home: const MainHome(),
   ));
 }
 
