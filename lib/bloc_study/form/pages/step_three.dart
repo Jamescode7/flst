@@ -1,3 +1,5 @@
+import 'package:flst/bloc_study/form/bloc/email_bloc.dart';
+import 'package:flst/bloc_study/form/bloc/name_bloc.dart';
 import 'package:flst/bloc_study/form/bloc/password_bloc.dart';
 import 'package:flst/bloc_study/form/widgets/flat_button.dart';
 import 'package:flutter/material.dart';
@@ -61,6 +63,9 @@ class StepThree extends StatelessWidget {
               builder: (context, state) {
                 return FlatButton(
                   onPress: () {
+                    context.read<EmailBloc>().add(const EmailSubmitted());
+                    context.read<NameBloc>().add(const NameSubmitted());
+                    context.read<PasswordBloc>().add(const PasswordSubmitted());
                     Navigator.popUntil(context, (route) => route.isFirst);
                   },
                   isActive:

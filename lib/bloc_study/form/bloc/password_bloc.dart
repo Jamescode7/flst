@@ -13,6 +13,7 @@ class PasswordBloc extends Bloc<PasswordEvent, PasswordState> {
         )) {
     on<PasswordChanged>(_onPasswordChanged);
     on<ConfirmPasswordChanged>(_onConfirmPasswordChanged);
+    on<PasswordSubmitted>(_passwordSubmitted);
   }
 
   void _onPasswordChanged(PasswordChanged event, Emitter<PasswordState> emit) {
@@ -39,5 +40,17 @@ class PasswordBloc extends Bloc<PasswordEvent, PasswordState> {
 
   bool _isValidPassword(String password) {
     return password.length > 8;
+  }
+
+  void _passwordSubmitted(
+      PasswordSubmitted event, Emitter<PasswordState> emit) {
+    emit(
+      const PasswordState(
+        password: '',
+        confirmPassword: '',
+        isPasswordValid: false,
+        isConfirmPasswordValid: false,
+      ),
+    );
   }
 }
