@@ -1,5 +1,6 @@
 import 'package:flst/bloc_study/form/bloc/email_bloc.dart';
 import 'package:flst/bloc_study/form/bloc/name_bloc.dart';
+import 'package:flst/bloc_study/form/bloc/password_bloc.dart';
 import 'package:flst/bloc_study/form/pages/step_one.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,6 +10,7 @@ void main() {
     providers: [
       BlocProvider(create: (context) => EmailBloc()),
       BlocProvider(create: (context) => NameBloc()),
+      BlocProvider(create: (context) => PasswordBloc()),
     ],
     child: MaterialApp(
       theme: ThemeData(

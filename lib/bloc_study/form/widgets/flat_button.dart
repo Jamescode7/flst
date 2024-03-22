@@ -18,7 +18,7 @@ class FlatButton extends StatelessWidget {
       width: screenWidth,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: isActive ? Colors.grey : Colors.blue,
+          backgroundColor: isActive ? Colors.blue : Colors.blue,
           shadowColor: Colors.transparent,
           elevation: 0,
         ),
